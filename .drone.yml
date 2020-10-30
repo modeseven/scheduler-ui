@@ -5,8 +5,8 @@ name: default
 steps:
   - name: build
     image: node:12.16.1-alpine3.9
-    user: 0
     commands:
+      - npm install
       - yarn build
   # - name: docker
   #   image: plugins/docker
