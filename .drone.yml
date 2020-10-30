@@ -12,7 +12,6 @@ steps:
     image: plugins/docker
     settings:
       repo: modeseven/rfdsclient
-      # dockerfile: src/main/docker/Dockerfile.fast-jar
       tags: ${DRONE_COMMIT}
       username:
         from_secret: dockerhub_username
