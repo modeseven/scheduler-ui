@@ -7,14 +7,14 @@ steps:
     image: node:12.16.1-alpine3.9
     commands:
       - npm install
-      - yarn build
-  # - name: docker
-  #   image: plugins/docker
-  #   settings:
-  #     repo: modeseven/rfds
-  #     dockerfile: src/main/docker/Dockerfile.fast-jar
-  #     tags: ${DRONE_COMMIT}
-  #     username:
-  #       from_secret: dockerhub_username
-  #     password:
-  #       from_secret: dockerhub_password
+      - yarn test --watchAll=false
+  - name: docker
+    image: plugins/docker
+    settings:
+      repo: modeseven/rfdsclient
+      # dockerfile: src/main/docker/Dockerfile.fast-jar
+      tags: ${DRONE_COMMIT}
+      username:
+        from_secret: dockerhub_username
+      password:
+        from_secret: dockerhub_password
