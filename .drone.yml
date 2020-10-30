@@ -1,0 +1,21 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+  - name: build
+    image: node:12.16.1-alpine3.9
+    user: 0
+    commands:
+      - npm run build
+      - npm test 
+  # - name: docker
+  #   image: plugins/docker
+  #   settings:
+  #     repo: modeseven/rfds
+  #     dockerfile: src/main/docker/Dockerfile.fast-jar
+  #     tags: ${DRONE_COMMIT}
+  #     username:
+  #       from_secret: dockerhub_username
+  #     password:
+  #       from_secret: dockerhub_password
