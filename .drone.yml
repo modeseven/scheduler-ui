@@ -11,7 +11,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: modeseven/rfdsclient
+      repo: modeseven/scheduler-ui
       tags: ${DRONE_COMMIT}
       username:
         from_secret: dockerhub_username
