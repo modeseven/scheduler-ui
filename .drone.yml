@@ -21,10 +21,10 @@ steps:
         from_secret: dockerhub_username
       password:
         from_secret: dockerhub_password
-            when:
-              event:
-                exclude:
-                  - tag
+    when:
+      event:
+        exclude:
+          - tag
   - name: Update staging GITOPS cluster
     image: cloudowski/drone-kustomize
     environment:
