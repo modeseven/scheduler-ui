@@ -3,6 +3,7 @@ import './App.css';
 import List from './components/List';
 import Toggle from './components/button';
 import withListLoading from './components/withListLoading';
+import { Button } from '@material-ui/core';
 function App() {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
@@ -32,7 +33,7 @@ function App() {
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>
-
+      <Button variant="contained">Default</Button>
       <Toggle></Toggle>
 
       

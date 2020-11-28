@@ -17,7 +17,7 @@ class Toggle extends React.Component {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            "id": 0,
+            "id": -1,
             "apptType": "string",
             "firstName": "string",
             "lastName": "string",
@@ -27,8 +27,6 @@ class Toggle extends React.Component {
     };
     const response = await fetch('api/apptrqst', requestOptions);
     const data = await response.json();
-
-
     }
   
     render() {
