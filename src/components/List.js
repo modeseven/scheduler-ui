@@ -45,6 +45,8 @@ const List = (props) => {
                 <TableCell align="right">Last</TableCell>
                 <TableCell align="right">SubjectId</TableCell>
                 <TableCell align="right">CreateTime</TableCell>
+                <TableCell align="right">Appt Type</TableCell>
+                <TableCell align="right">Status</TableCell>
                 <TableCell align="right">Action</TableCell>
               </TableRow>
             </TableHead>
@@ -58,6 +60,8 @@ const List = (props) => {
                   <TableCell align="right">{row.lastName}</TableCell>
                   <TableCell align="right">{row.subjectId}</TableCell>
                   <TableCell align="right">{row.createDateTime}</TableCell>
+                  <TableCell align="right">{row.appointmentType}</TableCell>
+                  <TableCell align="right">{row.appointmentStatus}</TableCell>
                   <TableCell align="right">
                   <Button
             variant="contained"

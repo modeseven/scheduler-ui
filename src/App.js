@@ -28,12 +28,12 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-        <h1>Hitting API</h1>
+        <h1>Appointment Requests</h1>
       </div>
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>
-      <Button variant="contained">Default</Button>
+
       <Toggle></Toggle>
 
       

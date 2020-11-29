@@ -13,6 +13,7 @@ class Toggle extends React.Component {
         isToggleOn: !state.isToggleOn
       }));
 
+      
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,14 +26,21 @@ class Toggle extends React.Component {
             "subjectId": "string"
           })
     };
-    const response = await fetch('api/apptrqst', requestOptions);
-    const data = await response.json();
+
+    let i = 0;
+    for (i = 0; i < 10; i++) {
+      const response = await fetch('api/apptrqst', requestOptions);
+      const data = await response.json();
+    }
+
+
     }
   
     render() {
       return (
         <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'ON' : 'OFF'}
+          Create Fake Request
+          {/* {this.state.isToggleOn ? 'ON' : 'OFF'} */}
         </button>
       );
     }
