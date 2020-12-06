@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import List from './components/List';
+import Toggle from './components/button';
 import withListLoading from './components/withListLoading';
+import { Button } from '@material-ui/core';
 function App() {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
@@ -13,9 +15,9 @@ function App() {
 
   useEffect(() => {
     setAppState({ loading: true });
-    
+   // const apiUrl = `http://localhost:4000/apptrqst`;
      const apiUrl = `api/apptrqst`;
-   // const apiUrl = `https://api.github.com/users/modeseven/repos`;
+
     
     fetch(apiUrl)
       .then((res) => res.json())
@@ -26,11 +28,15 @@ function App() {
   return (
     <div className='App'>
       <div className='container'>
-        <h1>Hitting API</h1>
+        <h1>Appointment Requests</h1>
       </div>
       <div className='repo-container'>
         <ListLoading isLoading={appState.loading} repos={appState.repos} />
       </div>
+
+      <Toggle></Toggle>
+
+      
       <footer>
         <div className='footer'>
           Built with <span role='img' aria-label='love'>
