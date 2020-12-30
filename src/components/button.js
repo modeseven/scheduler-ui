@@ -28,7 +28,8 @@ class Toggle extends React.Component {
     };
 
     let i = 0;
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 1000; i++) {
+     // const response = await fetch('http://localhost:8081/api/apptrqst', requestOptions);
       const response = await fetch('api/apptrqst', requestOptions);
       const data = await response.json();
     }
